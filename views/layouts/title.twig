@@ -1,0 +1,2 @@
+{% set titles = [app.name, this.title] %}
+{{ titles|filter(v => v)|join(' / ') }}

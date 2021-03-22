@@ -1,0 +1,25 @@
+<section class="index">
+  <div class="photo-container">
+    <div class="photo"></div>
+  </div>
+  <p>A bunch of
+    <strong>Yii2 extensions</strong>, if you like'em, be my
+    <em>guest.</em>
+  </p>
+  <ol class="terminal-toc">
+    {% for module in app.navigation.getExtensionModules() %}
+      <li>
+        <a href="{{ path([module.defaultRoute]) }}">
+          {{ module.getIcon(['align-middle']) | raw }}
+          {{ module.getExtensionName() }}
+        </a>
+      </li>
+    {% endfor %}
+    <li>
+      <a href="https://github.com/cacko/yii2-clamav" data-toggle="tooltip" title="Go to source" target="_blank" rel="noopener noreferer">
+        <i class="icon-widgets-lightbulb align-middle"></i>
+        Yii2-ClamAV
+      </a>
+    </li>
+  </ol>
+</section>

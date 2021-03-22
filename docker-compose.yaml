@@ -1,0 +1,33 @@
+# Use postgres/example user/password credentials
+version: '3.7'
+
+services:
+
+  redis:
+    platform: linux/arm64/v8
+    build: ./docker/redis
+    volumes:
+      - redis_data:/data
+      - redis_run:/run/redis
+
+  web:
+    platform: linux/arm64/v8
+    build: ./docker/web
+    depends_on:
+      - redis
+    environment:
+      WEB_DOCUMENT_ROOT: /app/src/web
+      TWIG_CACHE: /app/twig
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/app/src
+      - twig_cache:/app/twig
+      - redis_run:/var/run/redis
+
+
+volumes:
+  redis_data:
+  redis_run:
+  twig_cache:

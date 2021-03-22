@@ -1,0 +1,18 @@
+<table>
+    <thead>
+    <tr>
+        <th>IPv4</th>
+        <th>Name</th>
+        <th>Catch Phrase</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in 0..25 %}
+        <tr>
+            <td>{{ faker.ipv4() }}</td>
+            <td>{{ faker.name() }}</td>
+            <td>{{ faker.catchPhrase() }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

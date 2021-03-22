@@ -1,0 +1,43 @@
+{% set module = app.controller.module %}
+{% set link = instanceof(module, "app\\modules\\ExtensionModuleInterface") ? module.getRepository() : 'https://github.com/cacko/yii2-widgets' %}
+{# ?> #}
+<div class="container">
+    <div class="navbar navbar-expand-sm navbar-dark">
+        <header class="terminal-logo ">
+            <div class="logo terminal-prompt {{ themeLearn }}">
+                <div id="theme-switch"></div>
+                <a href="{{ link }}" class="no-style" data-toggle="tooltip" title="Open in github" target="_blank"
+                   rel="noopener noreferer">{% include("title.twig") %}</a>
+            </div>
+        </header>
+        <span class="d-sm-none" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </span>
+        <nav class="terminal-menu collapse navbar-collapse" id="navbarNav">
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                {% if app.controller.module.id != 'home' %}
+                    <li>
+                        <a href="/" class="menu-item" data-toggle="tooltip" title="Home">
+                            <span><i class="icon-widgets-home-outline"></i></span>
+                            <span class="d-sm-none">Home</span>
+                        </a>
+                        <meta property="position">
+                    </li>
+                    {% for module in app.navigation.getExtensionModules() %}
+                        {% if module.id != app.controller.module.id %}
+                            <li property="itemListElement" typeof="ListItem">
+                                <a href="{{ path([module.defaultRoute]) }}" data-toggle="tooltip"
+                                   title="{{ module.getNavigationName() }}" property="item" typeof="WebPage"
+                                   class="menu-item">
+                                    <span property="name">{{ module.getIcon() | raw }}</span>
+                                    <span class="d-sm-none">{{ module.getNavigationName() }}</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>

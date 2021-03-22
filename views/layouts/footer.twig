@@ -1,0 +1,21 @@
+{% set currentModule = app.controller.module %}
+<footer>
+    <div>
+        <a href="https://github.com/yiisoft/yii2" data-toggle="tooltip" title="Open GitHub" target="_blank"
+           rel="noopener noreferer">Yii</a><span>{{ Yii.getVersion() }}</span>
+    </div>
+    {% if instanceof(currentModule, "app\\modules\\ExtensionModuleInterface") %}
+        <div>
+            <a href="{{ currentModule.getRepository() }}" target="_blank" data-toggle="tooltip" title="Open GitHub"
+               rel="noopener noreferer">{{ currentModule.getExtensionName() }}</a><span>{{ currentModule.getExtensionVersion() }}</span>
+        </div>
+    {% else %}
+        <div>
+            <a href="https://terminalcss.xyz/" data-toggle="tooltip" title="Open GitHub" target="_blank"
+               rel="noopener noreferer">Terminal CSS</a><span>0.7.2</span>
+        </div>
+    {% endif %}
+    <div>
+        <a href="https://cacko.net">cacko</a><span>2021</span>
+    </div>
+</footer>

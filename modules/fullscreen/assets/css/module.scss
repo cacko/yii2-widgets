@@ -1,0 +1,32 @@
+section {
+    &[image] {
+        img {
+            border: 1px solid var(--progress-bar-background);
+            animation: bloom ease-in-out 15s forwards infinite;
+        }
+    }
+
+    &[gallery] {
+        .grid {
+            border: 1px solid var(--progress-bar-background);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        figcaption {
+            padding: 0.3rem;
+        }
+    }
+    padding-top: 1rem;
+}
+
+.image-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        font-size: 2em;
+    }
+}

@@ -1,0 +1,193 @@
+#navbarNav {
+  ul {
+    column-gap: 0.5em;
+    li {
+      margin-right: 0;
+    }
+  }
+}
+
+section.index {
+  padding-top: 28em;
+  position: relative;
+  overflow: hidden;
+
+  ol {
+    i {
+      font-size: 1.45rem;
+    }
+
+    &.terminal-toc {
+      li {
+        a:hover {
+          padding: 0.3em;
+          border-radius: 0.5em;
+        }
+      }
+    }
+  }
+
+  .photo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+
+    .photo {
+      flex-grow: 1;
+      background-image: url('/images/yiilogo.webp');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform-origin: 0 0;
+
+      @keyframes zoom {
+        0% {
+          transform: scale(1, 1);
+        }
+
+        50% {
+          transform: scale(1.1, 1.1);
+        }
+
+        100% {
+          transform: scale(1, 1);
+        }
+      }
+
+      @keyframes zoom {
+        0% {
+          transform: scale(1, 1);
+        }
+
+        50% {
+          transform: scale(1.1, 1.1);
+        }
+
+        100% {
+          transform: scale(1, 1);
+        }
+      }
+
+      @keyframes zoom {
+        0% {
+          transform: scale(1, 1);
+        }
+
+        50% {
+          transform: scale(1.1, 1.1);
+        }
+
+        100% {
+          transform: scale(1, 1);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  transform: scale(0.75, 1);
+  display: flex;
+  justify-content: center;
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: 0.1em;
+      min-width: 0.5em;
+    }
+
+    &:not(:last-child)::before {
+      background: var(--secondary-color);
+      margin-right: 0.3em;
+    }
+
+    &:not(:first-child)::after {
+      background: var(--secondary-color);
+      margin-left: 0.3em;
+    }
+
+    span {
+      padding-left: 0.5em;
+    }
+  }
+
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: bloom 2s ease 0s normal both infinite;
+  justify-content: end;
+  padding: 1rem;
+  align-items: end;
+
+  i {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+}
+
+.blur {
+  animation: blur 1s ease 0s normal both infinite;
+}
+
+#theme-switch {
+  position: absolute;
+  top: calc(var(--global-space) * 2);
+  left: 0;
+  height: 1.2em;
+  width: 1.2em;
+  cursor: pointer;
+}
+
+header {
+  .terminal-prompt {
+    &.learn {
+      &::before {
+        animation: blink 2s ease 0s normal both infinite;
+      }
+    }
+
+    &::before {
+      content: '\e800';
+      font-family: "yii2-widgets";
+      font-style: normal;
+      font-weight: normal;
+      speak: never;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      opacity: .8;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1em;
+      margin-left: .2em;
+      font-size: 120%;
+      cursor: pointer;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+
+
+    }
+  }
+}

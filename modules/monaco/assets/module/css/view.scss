@@ -1,0 +1,19 @@
+.terminal-card {
+    header {
+        i {
+            cursor: pointer;
+            transition: 300ms all ease;
+            transform: scale(1);
+            display: inline-block;
+            margin-right: .3rem;
+
+            &:hover {
+                transform: scale(2);
+
+            }
+        }
+    }
+    >div {
+        padding: 0 !important;
+    }
+}

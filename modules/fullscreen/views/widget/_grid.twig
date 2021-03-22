@@ -1,0 +1,18 @@
+{% if this.beginCache("fultscree_grid") %}
+    <div class="grid">
+        {% for i in 0..52 %}
+            {% set title = faker.realText(50) %}
+            <figure>
+                <div class="embed-responsive embed-responsive-4by3">
+                    <div class="image-loader embed-responsive-item">
+                        <i class="icon-widgets-spin4 animate-spin"></i>
+                    </div>
+                    <img src="{{ faker.loremFlickrUrl() }}.jpg" class="embed-responsive-item" loading="lazy"
+                         alt="{{ title }}">
+                </div>
+                <figcaption>{{ title }} {{ faker.emoji() }}</figcaption>
+            </figure>
+        {% endfor %}
+    </div>
+    {{ void(this.endCache()) }}
+{% endif %}

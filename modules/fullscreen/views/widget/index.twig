@@ -1,0 +1,25 @@
+{{ use("Cacko\\Yii2\\Widgets\\FullScreen\\widgets\\FullScreenWidget") }}
+
+<section image>
+    <h2 class="text-center">fullscreen toggle in the center</h2>
+    {{ full_screen_widget_widget({
+        'content': this.render('_image.twig'),
+        'togglePosition': constant("Cacko\\Yii2\\Widgets\\FullScreen\\widgets\\FullScreenWidget::CENTER_CENTER")
+    }) }}
+</section>
+
+<section table>
+    <h2 class="text-center">fullscreen toggle bottom-left</h2>
+    {{ full_screen_widget_widget({
+        'content': this.render('_table.twig', {'faker': faker}),
+        'togglePosition': constant("Cacko\\Yii2\\Widgets\\FullScreen\\widgets\\FullScreenWidget::BOTTOM_LEFT")
+    }) }}
+</section>
+
+<section gallery>
+    <h2 class="text-center"> fullscreen toggle top-right</h2>
+    {{ full_screen_widget_widget({
+        'content': this.render('_grid.twig', {'faker': faker}),
+        'togglePosition': constant("Cacko\\Yii2\\Widgets\\FullScreen\\widgets\\FullScreenWidget::TOP_RIGHT")
+    }) }}
+</section>

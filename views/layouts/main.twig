@@ -1,0 +1,40 @@
+{{ register_asset_bundle('app/assets/SiteAsset') }}
+{{ void(this.beginPage()) }}
+<!DOCTYPE html>
+<html lang="{{ app.language }}" class="{{ theme }}">
+<head>
+    <meta charset="{{ app.charset }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% include("title.twig") %}</title>
+    {{ html.csrfMetaTags | raw }}
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#cad1d9">
+    <meta name="theme-color" content="#ffffff">
+    {{ void(this.head) }}
+</head>
+<body class="terminal">
+<script>
+    window.addEventListener('beforeunload', () => document.getElementById('loader').style.display = 'flex');
+</script>
+<div id="loader" style="display: none">
+    <div>
+        <i class="icon-widgets-spin4 animate-spin"></i>
+    </div>
+</div>
+{{ void(this.beginBody()) }}
+{% include('header.twig') %}
+<div class="body-content">
+    <div class="container">
+        {{ content | raw }}
+    </div>
+</div>
+<hr/>
+{% include('footer.twig') %}
+{{ void(this.endBody()) }}
+</body>
+</html>
+{{ void(this.endPage()) }}
