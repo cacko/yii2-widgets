@@ -9,5 +9,5 @@
     $('.terminal-card').widgetFullScreen({
         selectorFullScreen: $moduleVars.data('fullscreen-target')
     });
-    $('i[data-toggle="collapse"').click((e) => $($(e.currentTarget).closest('.terminal-card').find('div.collapse')).toggleClass('show'));
+    $('i[data-toggle="collapse"]').click((e) => $($(e.currentTarget).closest('.terminal-card').find('div.collapse')).toggleClass('show'));
 })();
