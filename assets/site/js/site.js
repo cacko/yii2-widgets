@@ -81,5 +81,5 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
     $(document).on('pjax:start', () => $('.video-widget').trigger('destroy.video'));
     $(document).on('pjax:send', () => $('#loader').show() && $('body').toggleClass('blur'));
-    $(document).on('pjax:complete', () => $('#loader').hide() && $('body').toggleClass('blur'));
+    $(document).on('pjax:end', () => $('#loader').hide() && $('body').toggleClass('blur'));
 });
