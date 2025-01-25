@@ -17,7 +17,7 @@ tasks:
   clean:
     desc: junk
     cmds:
-      - docker compose rm -f ||:
+      - "docker compose rm -f ||:"
 
   require:
     desc: composer require
