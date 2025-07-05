@@ -20,8 +20,8 @@
         "cacko/yii2-widget-video": "=0.1.6",
         "cacko/yii2-widget-monaco": "=0.6.3",
         "yiisoft/yii2-redis": "^2.0",
-        "yiisoft/yii2-twig": "2.4.2",
-        "twig/twig": "^3.19"
+        "yiisoft/yii2-twig": "^2.5",
+        "twig/twig": "3.11.1"
     },
     "config": {
         "process-timeout": 1800,
