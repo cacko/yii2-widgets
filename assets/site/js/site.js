@@ -77,7 +77,6 @@ $(function () {
     }).animate();
 
 
-
     $('[data-toggle="tooltip"]').tooltip();
     $(document).on('pjax:start', () => $('.video-widget').trigger('destroy.video'));
     $(document).on('pjax:send', () => $('#loader').show() && $('body').toggleClass('blur'));
