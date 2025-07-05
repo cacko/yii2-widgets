@@ -43,5 +43,5 @@ tasks:
       cmds:
         - git commit -am "$(curl -s https://commit.cacko.net/index.txt)"
         - git push
-        - ssh $REMOTE_HOST 'source ~/.zshrc;cd /var/www/{{.PROJECT}};git pull'
+        - ssh $REMOTE_HOST 'source ~/.zshrc;cd /var/www/{{.PROJECT}};git pull;composer install'
       
