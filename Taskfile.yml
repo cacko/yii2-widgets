@@ -1,5 +1,8 @@
 version: "3"
 
+vars:
+  PROJECT: yii
+
 tasks:
   build:
     desc: Build the container image
@@ -34,4 +37,11 @@ tasks:
     desc: composer update
     cmds:
       - php composer.phar update {{.CLI_ARGS}}
+
+  deploy:
+      desc: deploy
+      cmds:
+        - git commit -am "$(curl -s https://commit.cacko.net/index.txt)"
+        - git push
+        - ssh $REMOTE_HOST 'source ~/.zshrc;cd /var/www/{{.PROJECT}};git pull'
       
