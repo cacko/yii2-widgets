@@ -7,9 +7,9 @@ $params = require __DIR__ . '/params.php';
 
 define('SERVER_HOSTNAME', $_SERVER['HTTP_HOST']);
 
-//if (SERVER_HOSTNAME === 'yii.cacko.net') {
-//    define("ENV_PROD", 1);
-//}
+if (SERVER_HOSTNAME === 'yii.cacko.net') {
+    define("ENV_PROD", 1);
+}
 
 return [
     'id' => 'home',

@@ -25,6 +25,7 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        '//fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap',
         'css/site.css',
     ];
 
